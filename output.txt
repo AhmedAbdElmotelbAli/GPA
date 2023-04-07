@@ -1,0 +1,60 @@
+Subject: English (ENG101)
+Full mark: 100
+Number of students: 7
+--------------------------------------------------
+Student name: John Doe
+Student number: 12345678
+Activities mark: 8
+Oral mark: 9
+Midterm mark: 18
+Final mark: 50
+Letter grade: B+
+--------------------------------------------------
+Student name: Jane Smith
+Student number: 23456789
+Activities mark: 10
+Oral mark: 8
+Midterm mark: 17
+Final mark: 52
+Letter grade: B+
+--------------------------------------------------
+Student name: Bob Johnson
+Student number: 34567890
+Activities mark: 9
+Oral mark: 10
+Midterm mark: 20
+Final mark: 55
+Letter grade: A
+--------------------------------------------------
+Student name: Alice Lee
+Student number: 45678901
+Activities mark: 7
+Oral mark: 6
+Midterm mark: 16
+Final mark: 45
+Letter grade: C+
+--------------------------------------------------
+Student name: Tom Brown
+Student number: 56789012
+Activities mark: 8
+Oral mark: 7
+Midterm mark: 18
+Final mark: 48
+Letter grade: B
+--------------------------------------------------
+Student name: Sara Davis
+Student number: 67890123
+Activities mark: 10
+Oral mark: 9
+Midterm mark: 19
+Final mark: 58
+Letter grade: A
+--------------------------------------------------
+Student name: David Wilson
+Student number: 78901234
+Activities mark: 9
+Oral mark: 8
+Midterm mark: 17
+Final mark: 53
+Letter grade: B+
+--------------------------------------------------
