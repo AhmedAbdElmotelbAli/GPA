@@ -19,8 +19,6 @@ import javax.swing.JFileChooser;
  */
 public class GPA_GUI extends javax.swing.JFrame {
 
-    
-
     /**
      * Creates new form GPA_GUI
      */
@@ -185,15 +183,15 @@ public class GPA_GUI extends javax.swing.JFrame {
         }
         String com;
         try {
-            
+
             com = new String(Files.readAllBytes(file.toPath()));
             System.out.println(com);
             t1.setText(com);
             t2.append("expanded " + file.getName() + " successfully\n");
             t2.setForeground(Color.green);
-            
+
         } catch (IOException ex) {
-            
+
         } catch (Exception e) {
             t2.append(e.toString());
             t2.setForeground(Color.red);
@@ -209,15 +207,14 @@ public class GPA_GUI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 // Get the first line from the text area
-t2.append("write path input like this");
-t2.append("C:\\Users\\SHEREF ZEDAN\\Downloads\\testcase\\testcase 18.JSON");
-t2.append("check and create output");
+
         String firstLine = t2.getText().split("\n")[0];
         try {
-            
-               File file = new File(firstLine);
+
+            File file = new File(firstLine);
             if (!file.exists() || !file.isFile()) {
                 throw new IllegalArgumentException("Invalid file path or name.");
+
             }
             String fileName = file.getName();
             String extension = fileName.substring(fileName.lastIndexOf(".") + 1);
@@ -226,17 +223,23 @@ t2.append("check and create output");
             }
 
             FileDataProcessor dataParser = new FileDataProcessor(file.getPath());
-            
+
             List<String> lines = dataParser.readFile();
-            
+
             Subject subject = dataParser.parseSubject(lines.get(0));
-            
+
             List<Student> students = dataParser.parseStudents(lines.subList(1, lines.size()));
-            
+
             dataParser.writeOutputToFile(subject, students);
-            
+            t2.append("out file is done");
+            t2.setForeground(Color.GREEN);
         } catch (IOException e) {
-            e.printStackTrace();
+            t2.append(e.toString());
+            t2.append("\nwrite path input like this");
+            t2.append("\nC:\\Users\\SHEREF ZEDAN\\Downloads\\testcase\\testcase 18.JSON");
+            t2.append("\ncheck and create output");
+             t2.setForeground(Color.red);
+
         }
 
         // TODO add your handling code here:
@@ -252,7 +255,7 @@ t2.append("check and create output");
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            
+
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -269,11 +272,11 @@ t2.append("check and create output");
             java.util.logging.Logger.getLogger(GPA_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
- 
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
                 new GPA_GUI().setVisible(true);
             }
         });
