@@ -21,7 +21,7 @@ import  gpaproject.Student;
 
 
 
-class FileDataProcessor {
+public class FileDataProcessor {
 	private String datafile;
 
     public FileDataProcessor(String datafile) {
