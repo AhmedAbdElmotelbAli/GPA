@@ -5,6 +5,7 @@
 package gpaproject;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -24,6 +25,7 @@ public class GPA_GUI extends javax.swing.JFrame {
      */
     public GPA_GUI() {
         initComponents();
+        setResizable(false);
     }
 
     /**
@@ -123,7 +125,7 @@ public class GPA_GUI extends javax.swing.JFrame {
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -149,11 +151,11 @@ public class GPA_GUI extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -207,7 +209,6 @@ public class GPA_GUI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 // Get the first line from the text area
-
         String firstLine = t2.getText().split("\n")[0];
         try {
 
@@ -233,15 +234,15 @@ public class GPA_GUI extends javax.swing.JFrame {
             dataParser.writeOutputToFile(subject, students);
             t2.append("out file is done");
             t2.setForeground(Color.GREEN);
-        } catch (IOException e) {
-            t2.append(e.toString());
+        } catch (Exception e) {
+            t2.append("\n"+e.toString());   
             t2.append("\nwrite path input like this");
-            t2.append("\nC:\\Users\\SHEREF ZEDAN\\Downloads\\testcase\\testcase 18.JSON");
+            t2.append("\nC:\\\\Users\\\\SHEREF ZEDAN\\\\Downloads\\\\testcase\\\\testcase 18.txt");
             t2.append("\ncheck and create output");
              t2.setForeground(Color.red);
 
-        }
-
+        
+            }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -276,7 +277,7 @@ public class GPA_GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-
+               
                 new GPA_GUI().setVisible(true);
             }
         });
