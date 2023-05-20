@@ -4,7 +4,6 @@
  */
 package gpaproject;
 
-import gpaproject.Main;
 import gpaproject.Subject;
 import java.util.Scanner;
 
@@ -20,6 +19,13 @@ public class Student {
     private int oralMark;
     private int midtermMark;
     private int finalMark;
+    int maxActiveOrOralMark = 10;
+    int maxMidtermMark = 20;
+    int maxFinalMark = 60;
+    int minMark = 0;
+
+    public Student() {
+    }
 
     public Student(String name, String number, int activitiesMark, int oralMark, int midtermMark, int finalMark) throws IllegalArgumentException {
         // Call the setter methods to assign the values to the variables
@@ -46,19 +52,19 @@ public class Student {
     }
 
     public boolean validateActivitiesMark() {
-        return activitiesMark >= 0 && activitiesMark <= 10;
+        return activitiesMark >= minMark && activitiesMark <= maxActiveOrOralMark;
     }
 
     public boolean validateOralMark() {
-        return oralMark >= 0 && oralMark <= 10;
+        return oralMark >= minMark && oralMark <= maxActiveOrOralMark;
     }
 
     public boolean validateMidtermMark() {
-        return midtermMark >= 0 && midtermMark <= 20;
+        return midtermMark >= minMark && midtermMark <= maxMidtermMark;
     }
 
     public boolean validateFinalMark() {
-        return finalMark >= 0 && finalMark <= 60;
+        return finalMark >= minMark && finalMark <= maxFinalMark;
     }
 
     public String getName() {
@@ -122,7 +128,7 @@ public class Student {
         }
         // Check if the number has exactly 8 characters
         if (number.length() != 8) {
-            throw new IllegalArgumentException("Invalid number: Number must have exactly 8 characters.");
+            throw new IllegalArgumentException("Invalid number: Number must have exactly 8 characters");
         }
         // Check if the first 7 characters are digits
         for (int i = 0; i < 7; i++) {
