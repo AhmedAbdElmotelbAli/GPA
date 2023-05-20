@@ -8,96 +8,36 @@ package gpaproject;
  *
  * @author SHEREF ZEDAN
  */
-//public class Subject {
-//
-//    private String subjectName;
-//    private String subjectCode;
-//    private int fullMark;
-//
-//    public Subject(String subjectName, String subjectCode, int fullMark) {
-//        this.subjectName = subjectName;
-//        this.subjectCode = subjectCode;
-//        this.fullMark = fullMark;
-//    }
-//
-//    public boolean validateSubjectName() {
-//        return subjectName.matches("^[a-zA-Z0-9 ]*$");
-//    }
-//
-//    public boolean validateSubjectCode() {
-//        return subjectCode.matches("^[a-zA-Z0-9]*$");
-//    }
-//
-//    public boolean validateFullMark() {
-//        return fullMark > 0 && fullMark <= 100;
-//    }
-//
-//    public String getSubjectName() {
-//        
-//        return subjectName;
-//    }
-//
-//    public String getSubjectCode() {
-//        return subjectCode;
-//    }
-//
-//    public int getFullMark() {
-//        if(fullMark < 0 || fullMark > 100){
-//        return fullMark;}
-//        else System.out.println("err in degree not in range");
-//        return -1;
-//    }
-//
-
-//    
-//}
 
 
-class Subject { 
-	 private String name;
-	 private String code;
-	 private int fullMark;
-	
+public class Subject { 
+         private String name;
+         private String code;
+         private int fullMark;
 
-	public Subject(String name, String code, int fullMark) {
-	    // Call the setter methods and let them validate and assign the attributes
-	    setName(name);
-	    setCode(code);
-	    setFullMark(fullMark);
-	}
-	
 
-	public String getName() {
-	    return name;
-	}
-	
-
-	public String getCode() {
-	    return code;
-	}
-	
-
-	public int getFullMark() {
-	    return fullMark;
-	}
-    public static boolean isValidName(String name) {
-        if (name.length() != 6) {
-            return false; // Name must be exactly 6 characters long
+        public Subject(String name, String code, int fullMark) {
+            // Call the setter methods and let them validate and assign the attributes
+            setName(name);
+            setCode(code);
+            setFullMark(fullMark);
         }
-        for (int i = 0; i < 3; i++) {
-            char c = name.charAt(i);
-            if (!Character.isLetter(c)) {
-                return false; // First three characters must be alphabetic
-            }
+
+
+        public String getName() {
+            return name;
         }
-        for (int i = 3; i < 6; i++) {
-            char c = name.charAt(i);
-            if (!Character.isDigit(c)) {
-                return false; // Last three characters must be numeric
-            }
+
+
+        public String getCode() {
+            return code;
         }
-        return true;
-    }
+
+
+        public int getFullMark() {
+            return fullMark;
+        }
+
     // Define a setter method for name that also validates it
     public void setName(String name) {
         // Check if the name is valid
@@ -127,4 +67,7 @@ class Subject {
         // Assign the fullMark after checking
         this.fullMark = fullMark;
     }
-}
+
+      }
+
+
