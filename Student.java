@@ -23,6 +23,7 @@ public class Student {
     int maxMidtermMark = 20;
     int maxFinalMark = 60;
     int minMark = 0;
+    int minNumber=8;
 
     public Student() {
     }
@@ -127,11 +128,11 @@ public class Student {
             throw new IllegalArgumentException("Invalid number: Number cannot be null or empty.");
         }
         // Check if the number has exactly 8 characters
-        if (number.length() != 8) {
+        if (number.length() != minNumber) {
             throw new IllegalArgumentException("Invalid number: Number must have exactly 8 characters");
         }
         // Check if the first 7 characters are digits
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < minNumber-1; i++) {
             char c = number.charAt(i);
             if (!Character.isDigit(c)) {
                 throw new IllegalArgumentException("Invalid number: Number must start with digits.");
@@ -143,7 +144,7 @@ public class Student {
 
     public void setActivitiesMark(int activitiesMark) throws IllegalArgumentException {
 
-        validateParameter("activities mark", activitiesMark, 0, 10);
+        validateParameter("activities mark", activitiesMark, minMark, maxActiveOrOralMark);
 
         this.activitiesMark = activitiesMark;
     }
@@ -151,21 +152,21 @@ public class Student {
     // Setter method for student oral/practical mark
     public void setOralMark(int oralMark) throws IllegalArgumentException {
 
-        validateParameter("oral mark", oralMark, 0, 10);
+        validateParameter("oral mark", oralMark, minMark, maxActiveOrOralMark);
 
         this.oralMark = oralMark;
     }
 
     public void setMidtermMark(int midtermMark) throws IllegalArgumentException {
 
-        validateParameter("midterm mark", midtermMark, 0, 20);
+        validateParameter("midterm mark", midtermMark, minMark, maxMidtermMark);
 
         this.midtermMark = midtermMark;
     }
 
     public void setFinalMark(int finalMark) throws IllegalArgumentException {
 
-        validateParameter("final mark", finalMark, 0, 60);
+        validateParameter("final mark", finalMark, minMark, maxFinalMark);
 
         this.finalMark = finalMark;
     }
